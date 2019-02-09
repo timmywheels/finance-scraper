@@ -2,11 +2,15 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxDriverLogLevel;
 import org.openqa.selenium.firefox.FirefoxOptions;
-import org.openqa.selenium.support.ui.*;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Wait;
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class Auth {
 
@@ -14,7 +18,11 @@ public class Auth {
     public static void webClient(String loginUrl, String username, String password, String portfolioUrl) {
         System.setProperty("webdriver.gecko.driver", "/Library/Java/Extensions/geckodriver");
         WebDriver driver = new FirefoxDriver();
-        Wait wait = new FluentWait(driver);
+        Wait wait = new FluentWait(driver).withTimeout(Duration.ofSeconds(30))
+                .pollingEvery(Duration.ofMillis(500))
+                .ignoring(NoSuchElementException.class)
+                .ignoring(StaleElementReferenceException.class)
+                .ignoring(ElementClickInterceptedException.class);
         FirefoxOptions options = new FirefoxOptions();
         options.setLogLevel(FirefoxDriverLogLevel.ERROR);
 
@@ -119,21 +127,10 @@ public class Auth {
                 if (singleStock.size() == totalDataPointsPerStock) {
                     stockList.add(singleStock);
 
-                    String fullCompanyName = singleStock.get(0);
-                    System.out.println("fullCompanyName: " + fullCompanyName);
-
-//                    System.out.println("===singleStock initial size: " + singleStock.size());
-
                     String[] companyNameAndSymbol = singleStock.get(0).split("[\\r\\n]+", -1);
-                    System.out.println("companyNameAndSymbol: " + Arrays.toString(companyNameAndSymbol));
-
-//                    System.out.println("===singleStock size 2: " + singleStock.size());
 
                     String symbol = companyNameAndSymbol[0];
                     System.out.println("symbol: " + symbol);
-
-//                    System.out.println("===singleStock size 3: " + singleStock.size());
-
 
                     String companyName = companyNameAndSymbol[1];
                     System.out.println("companyName: " + companyName);
@@ -153,7 +150,6 @@ public class Auth {
                 }
             }
 
-            System.out.println(stockList);
             driver.quit();
 
         } catch (Exception e) {
