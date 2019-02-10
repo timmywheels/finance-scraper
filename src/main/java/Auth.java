@@ -18,8 +18,8 @@ public class Auth {
     public static void webClient(String loginUrl, String username, String password, String portfolioUrl) {
         System.setProperty("webdriver.gecko.driver", "/Library/Java/Extensions/geckodriver");
         WebDriver driver = new FirefoxDriver();
-        Wait wait = new FluentWait(driver).withTimeout(Duration.ofSeconds(30))
-                .pollingEvery(Duration.ofMillis(500))
+        Wait wait = new FluentWait(driver).withTimeout(10, TimeUnit.SECONDS)
+                .pollingEvery(1000, TimeUnit.MILLISECONDS)
                 .ignoring(NoSuchElementException.class)
                 .ignoring(StaleElementReferenceException.class)
                 .ignoring(ElementClickInterceptedException.class);

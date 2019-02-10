@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/finance-scraper.iml" filepath="$PROJECT_DIR$/finance-scraper.iml" />
+      <module fileurl="file://$PROJECT_DIR$/src/main/web/web.iml" filepath="$PROJECT_DIR$/src/main/web/web.iml" />
     </modules>
   </component>
 </project>
