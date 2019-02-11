@@ -18,6 +18,9 @@
     <version>1.0.0</version>
     <packaging>pom</packaging>
 
+    <name>angular-frontend</name>
+    <url>http://maven.apache.org</url>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>11.0.1</java.version>
@@ -38,13 +41,13 @@
                             <goal>yarn</goal>
                         </goals>
                         <configuration>
-                            <arguments>src:main:web:build</arguments>
+                            <arguments>web:build</arguments>
                         </configuration>
                     </execution>
                 </executions>
                 <configuration>
-                    <nodeVersion>v10.1.0</nodeVersion>
-                    <yarnVersion>v1.12.1</yarnVersion>
+                    <nodeVersion>v10.6.0</nodeVersion>
+                    <yarnVersion>v1.12.3</yarnVersion>
                     <workingDirectory>${pom.parent.basedir}</workingDirectory>
                 </configuration>
             </plugin>

@@ -47,8 +47,8 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <nodeVersion>v10.1.0</nodeVersion>
-                    <yarnVersion>v1.12.1</yarnVersion>
+                    <nodeVersion>v10.6.0</nodeVersion>
+                    <yarnVersion>v1.12.3</yarnVersion>
                 </configuration>
             </plugin>
 
