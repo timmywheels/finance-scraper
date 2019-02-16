@@ -9,20 +9,23 @@ public class Fetch extends Data {
 
         System.out.println("Saving data...\n");
         String sql = "SELECT symbol, companyName, lastPrice, change, percentChange FROM stocks";
-
         try (Connection db = Fetch.connect();
              Statement stmt = db.createStatement();
              ResultSet rs = stmt.executeQuery(sql)) {
 
-            // loop through the result set
+            String json = ResultSetToJson.resultSetToJson(db, sql);
+            Api.api(json);
+            System.out.println("JSON:" + json);
+
             while (rs.next()) {
+//                System.out.println("==========");
+//                System.out.println(rs.getString("symbol"));
+//                System.out.println(rs.getString("companyName"));
+//                System.out.println("$" + rs.getString("lastPrice"));
+//                System.out.println(rs.getString("change"));
+//                System.out.println(rs.getString("percentChange"));
                 System.out.println("==========");
-                System.out.println(rs.getString("symbol"));
-                System.out.println(rs.getString("companyName"));
-                System.out.println("$" + rs.getString("lastPrice"));
-                System.out.println(rs.getString("change"));
-                System.out.println(rs.getString("percentChange"));
-                System.out.println("==========");
+
             }
         } catch (SQLException e) {
             System.out.println(e.getMessage());
