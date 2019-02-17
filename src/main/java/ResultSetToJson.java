@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Map;
 
 public class ResultSetToJson {
+
     public static String resultSetToJson(Connection connection, String query) {
         List<Map<String, Object>> listOfMaps = null;
         try {

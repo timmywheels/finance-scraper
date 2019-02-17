@@ -1,15 +1,16 @@
+import java.util.Date;
+
 public class Main {
 
     public static void main(String[] args) {
 
-        Credentials key = new Credentials();
+//        Credentials key = new Credentials();
+//        String loginUrl = key.getLoginUrl();
+//        String username = key.getUsername();
+//        String password = key.getPassword();
+//        Auth.webClient(loginUrl, username, password);
 
-        Auth.webClient(key.getLoginUrl(), key.getUsername(), key.getPassword());
-        ResultSetToJson json = new ResultSetToJson();
-//        Api server = new Api();
-//        server.api();
-
-        Fetch.data();
+        Api.server();
 
     }
 

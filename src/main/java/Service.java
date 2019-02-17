@@ -11,14 +11,14 @@ import java.util.List;
 public class Service extends Auth {
 
     public static Timestamp getCurrentTimeStamp() {
-        return new Timestamp(System.currentTimeMillis());
+        int convertMillisecondsToSeconds = 1000;
+        return new Timestamp(System.currentTimeMillis() / convertMillisecondsToSeconds);
     }
 
     public static void run(WebDriver driver, Wait wait){
 
         try {
-    //          7. SCRAPE TABLE
-            var Data = new Data();
+//          7. SCRAPE TABLE
             System.out.println("Starting scraper...");
             WebElement tableRow = (WebElement) wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/div/div/div[1]/div/div[3]/div[2]/div/div/div/div/div/div[3]/div/div/section/div/section[1]/table/tbody/tr[1]")));
 

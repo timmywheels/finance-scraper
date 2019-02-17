@@ -1,6 +1,5 @@
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class Data {
@@ -8,7 +7,6 @@ public class Data {
     public static Connection connect() {
         String url = "jdbc:sqlite:src/main/db/stock_portfolio.db";
         Connection db = null;
-
         try {
             db = DriverManager.getConnection(url);
             System.out.println("Connected to database...");
@@ -16,6 +14,5 @@ public class Data {
             System.out.println(e.getMessage());
         }
         return db;
-
     }
 }
