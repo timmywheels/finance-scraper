@@ -3,12 +3,16 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Wait;
-
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
 
 public class Service extends Auth {
+
+    public static Timestamp getCurrentTimeStamp() {
+        return new Timestamp(System.currentTimeMillis());
+    }
 
     public static void run(WebDriver driver, Wait wait){
 
@@ -28,6 +32,8 @@ public class Service extends Auth {
 
             int totalDataPointsPerStock = 4;
 
+            Timestamp timeStamp = getCurrentTimeStamp();
+
             for (WebElement stockDataCell : stockData) {
                 singleStock.add(stockDataCell.getAttribute("innerText").trim());
 
@@ -35,6 +41,8 @@ public class Service extends Auth {
 
                     stockList.add(singleStock);
                     String[] companyNameAndSymbol = singleStock.get(0).split("[\\r\\n]+", -1);
+
+                    System.out.println("timeStamp: " + timeStamp);
 
                     String symbol = companyNameAndSymbol[0];
                     System.out.println("symbol: " + symbol);
@@ -51,7 +59,7 @@ public class Service extends Auth {
                     String percentChange = singleStock.get(3);
                     System.out.println("percentChange: " + percentChange);
 
-                    Store.data(symbol, companyName, lastPrice, change, percentChange);
+                    Store.data(timeStamp, symbol, companyName, lastPrice, change, percentChange);
 
                     singleStock = new ArrayList<>();
                 }
@@ -65,5 +73,7 @@ public class Service extends Auth {
             driver.quit();
         }
     }
+
+
 
 }

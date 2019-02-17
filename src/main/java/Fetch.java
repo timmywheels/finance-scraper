@@ -8,7 +8,7 @@ public class Fetch extends Data {
     public static void data() {
 
         System.out.println("Saving data...\n");
-        String sql = "SELECT symbol, companyName, lastPrice, change, percentChange FROM stocks";
+        String sql = "SELECT timeStamp, symbol, companyName, lastPrice, change, percentChange FROM stocks";
         try (Connection db = Fetch.connect();
              Statement stmt = db.createStatement();
              ResultSet rs = stmt.executeQuery(sql)) {
