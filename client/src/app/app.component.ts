@@ -21,8 +21,7 @@ export class AppComponent {
   }
 
   getData() {
-    return this.http.get(this.apiUrl)
-      .subscribe();
+    return this.http.get(this.apiUrl).subscribe((data) => this.data = data);
   }
 }
 
