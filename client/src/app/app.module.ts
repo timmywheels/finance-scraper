@@ -5,7 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { HttpClientModule } from "@angular/common/http";
-import { MatTableModule, MatToolbarModule, MatIconModule } from '@angular/material';
+import { MatTableModule, MatToolbarModule, MatIconModule, MatSortModule } from '@angular/material';
+import {BrowserAnimationsModule, NoopAnimationsModule} from "@angular/platform-browser/animations";
 
 
 
@@ -15,11 +16,14 @@ import { MatTableModule, MatToolbarModule, MatIconModule } from '@angular/materi
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
+    NoopAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
     MatTableModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    MatSortModule
   ],
   providers: [AppComponent],
   bootstrap: [AppComponent]
