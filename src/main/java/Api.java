@@ -3,6 +3,7 @@ import spark.*;
 import java.util.HashMap;
 
 import static spark.Spark.get;
+import static spark.Spark.post;
 
 public class Api extends Data {
 
@@ -27,17 +28,33 @@ public class Api extends Data {
         Spark.after(filter);
     }
 
-    public static String server() {
+    public static void server() {
         String sql = "SELECT timeStamp, symbol, companyName, lastPrice, change, percentChange FROM stocks";
         String json = ResultSetToJson.resultSetToJson(Api.connect(), sql);
         Api.applyCORSFilter();
-        get(new Route("/api/snapshot/:id") {
-            @Override
-            public Object handle(Request request, Response response) {
-                return json;
-            }
-        });
+        get("/api/snapshots", (req, res) -> json);
         System.out.println("JSON:" + json);
-        return json;
+
+        get("/api/snapshots/new", (req, res) -> {
+            res.body("Access Denied");
+            return 0;
+        });
+
+        post("/api/snapshots/new", (request, response) -> {
+            Credentials key = new Credentials();
+            String loginUrl = key.getLoginUrl();
+            String username = key.getUsername();
+            String password = key.getPassword();
+            Auth.webClient(loginUrl, username, password);
+            return "Snapshot generated...";
+        });
+
+
     }
+//
+//    public static void generateSnapshot() {
+//
+//
+//    }
+
 }

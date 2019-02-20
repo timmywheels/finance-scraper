@@ -21,7 +21,7 @@ export interface Snapshot {
 
 
 export class AppComponent {
-  private apiUrl = 'http://localhost:4567/api/snapshot/001';
+  private apiUrl = 'http://localhost:4567/api/snapshots';
   data: any = [];
   displayedColumns = ['timeStamp', 'symbol', 'companyName', 'lastPrice', 'change', 'percentChange'];
   sortedData: Snapshot[];
@@ -70,6 +70,11 @@ export class AppComponent {
   }
 
 
+  triggerPostRequest(){
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', "http://localhost:4567/api/snapshots/new", true);
+    xhr.send();
+  }
 
 }
 
@@ -78,5 +83,27 @@ function compare(a: number | string, b: number | string, isAsc: boolean) {
 }
 
 
+
+
+// export interface AsyncTab {
+//   label: string;
+//   content: string;
+// }
+//
+// /**
+//  * @title Tab group with asynchronously loading tab contents
+//  */
+//
+// export class TabGroupAsync {
+//   asyncTabs: Observable<AsyncTab[]>;
+//
+//   constructor() {
+//     this.asyncTabs = new Observable((observer: Observer<AsyncTab[]>) => {
+//       setTimeout(() => {
+//         observer.next(this.data);
+//       }, 1000);
+//     });
+//   }
+// }
 
 

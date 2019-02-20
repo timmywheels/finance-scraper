@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { HttpClientModule } from "@angular/common/http";
-import { MatTableModule, MatToolbarModule, MatIconModule, MatSortModule } from '@angular/material';
+import { MatTableModule, MatToolbarModule, MatIconModule, MatSortModule, MatButtonModule } from '@angular/material';
 import {BrowserAnimationsModule, NoopAnimationsModule} from "@angular/platform-browser/animations";
 
 
@@ -23,7 +23,9 @@ import {BrowserAnimationsModule, NoopAnimationsModule} from "@angular/platform-b
     MatTableModule,
     MatToolbarModule,
     MatIconModule,
-    MatSortModule
+    MatSortModule,
+    MatButtonModule
+
   ],
   providers: [AppComponent],
   bootstrap: [AppComponent]
