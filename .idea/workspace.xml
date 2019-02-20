@@ -2,18 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cb6d3fa0-16d5-4bf5-854a-bc13585bcee8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/app.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finance-scraper.iml" beforeDir="false" afterPath="$PROJECT_DIR$/finance-scraper.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/db/stock_portfolio.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/db/stock_portfolio.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Api.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Api.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/web/web.iml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/web/web.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Store.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Store.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/src/main/web/target/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -74,11 +64,20 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Api.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="53" lean-forward="true" selection-start-line="53" selection-start-column="2" selection-end-line="57" selection-end-column="7" />
+            <state relative-caret-position="360">
+              <caret line="24" column="17" lean-forward="true" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="das://6775873d-bd72-451f-b73a-2c1dfab993c4/schema/main/table/stocks">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
             </state>
           </provider>
         </entry>
@@ -228,7 +227,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550637109803" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550637440141" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="editor.config.ad.shown" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -315,12 +314,12 @@
       <workItem from="1550189576552" duration="8668000" />
       <workItem from="1550363831778" duration="6048000" />
       <workItem from="1550371048633" duration="17129000" />
-      <workItem from="1550540370386" duration="9004000" />
+      <workItem from="1550540370386" duration="9882000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49744000" />
+    <option name="totallyTimeSpent" value="50622000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1280" height="713" extended-state="6" />
@@ -331,12 +330,12 @@
       <window_info id="Designer" order="2" />
       <window_info id="Learn" order="3" />
       <window_info id="UI Designer" order="4" />
-      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info id="Favorites" order="5" side_tool="true" weight="0.32956383" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Image Layers" order="7" />
       <window_info id="Web" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Database Console" order="0" weight="0.32970297" />
-      <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.59710497" visible="true" weight="0.31078905" />
+      <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.59710497" visible="true" weight="0.17552336" />
       <window_info anchor="bottom" id="Docker" order="2" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="3" sideWeight="0.40289506" side_tool="true" weight="0.40136987" />
       <window_info anchor="bottom" id="Messages" order="4" weight="0.28082192" />
@@ -358,8 +357,8 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="5" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="6" sideWeight="0.49863014" weight="0.24959612" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="7" weight="0.25" />
-      <window_info active="true" anchor="right" id="Run" order="8" sideWeight="0.5477855" visible="true" weight="0.35702747" />
-      <window_info anchor="right" id="Database" order="9" sideWeight="0.45221445" side_tool="true" weight="0.38448423" />
+      <window_info active="true" anchor="right" id="Run" order="8" sideWeight="0.546875" visible="true" weight="0.35702747" />
+      <window_info anchor="right" id="Database" order="9" sideWeight="0.453125" side_tool="true" visible="true" weight="0.35702747" />
       <window_info anchor="right" x="0" y="0" width="428" height="763" id="Documentation" order="10" side_tool="true" weight="0.32995194" />
     </layout>
     <layout-to-restore>
@@ -581,13 +580,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://6775873d-bd72-451f-b73a-2c1dfab993c4/schema/main/table/stocks">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Store.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -629,13 +621,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
@@ -643,10 +628,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="das://6775873d-bd72-451f-b73a-2c1dfab993c4/schema/main/table/stocks">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Api.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="53" lean-forward="true" selection-start-line="53" selection-start-column="2" selection-end-line="57" selection-end-column="7" />
+        <state relative-caret-position="360">
+          <caret line="24" column="17" lean-forward="true" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

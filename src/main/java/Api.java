@@ -51,10 +51,5 @@ public class Api extends Data {
 
 
     }
-//
-//    public static void generateSnapshot() {
-//
-//
-//    }
 
 }
