@@ -24,8 +24,8 @@ export class AppComponent {
   private apiUrl = 'http://localhost:4567/api/snapshots';
   data: any = [];
   displayedColumns = ['timeStamp', 'symbol', 'companyName', 'lastPrice', 'change', 'percentChange'];
-  sortedData: Snapshot[];
-  dataSource = new MatTableDataSource(this.sortedData);
+  sortedData: any = [];
+  // dataSource = new MatTableDataSource(this.sortData(this.data));
 
   @ViewChild(MatSort) sort: MatSort;
 
@@ -33,24 +33,24 @@ export class AppComponent {
   //   this.dataSource.sort = this.sort;
   // }
 
-  ngOnInit() {
-    this.sortData(this.data);
-  }
+  // ngOnInit() {
+  //   this.sortData(this.data);
+  // }
 
   constructor(private http: HttpClient) {
-      this.sortedData = this.data.slice()
-      console.log("this.sortedData", this.sortedData)
-      this.getData();
+    this.getData();
+    this.sortedData = this.data.slice()
+    console.log("this.sortedData", this.sortedData)
   }
 
   getData(){
-    return this.http.get(this.apiUrl).subscribe((data) => this.data = data);
+    return this.http.get(this.apiUrl).subscribe((data) => this.sortedData = data);
   }
 
   sortData(sort: Sort) {
-    const data = this.data.slice();
+    const data = this.sortedData.slice();
     if (!sort.active || sort.direction === '') {
-      this.data = data;
+      this.sortedData = data;
       return;
     }
 
@@ -66,12 +66,13 @@ export class AppComponent {
         default: return 0;
       }
     });
+    return this.sortedData;
     console.log("this.sortedData:", this.sortedData)
   }
 
 
   triggerPostRequest(){
-    var xhr = new XMLHttpRequest();
+    let xhr = new XMLHttpRequest();
     xhr.open('POST', "http://localhost:4567/api/snapshots/new", true);
     xhr.send();
   }
@@ -83,27 +84,5 @@ function compare(a: number | string, b: number | string, isAsc: boolean) {
 }
 
 
-
-
-// export interface AsyncTab {
-//   label: string;
-//   content: string;
-// }
-//
-// /**
-//  * @title Tab group with asynchronously loading tab contents
-//  */
-//
-// export class TabGroupAsync {
-//   asyncTabs: Observable<AsyncTab[]>;
-//
-//   constructor() {
-//     this.asyncTabs = new Observable((observer: Observer<AsyncTab[]>) => {
-//       setTimeout(() => {
-//         observer.next(this.data);
-//       }, 1000);
-//     });
-//   }
-// }
 
 
