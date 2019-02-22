@@ -18,7 +18,7 @@ public class Service extends Auth {
     public static void run(WebDriver driver, Wait wait){
 
         try {
-//          7. SCRAPE TABLE
+
             System.out.println("Starting scraper...");
             WebElement tableRow = (WebElement) wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/div/div/div[1]/div/div[3]/div[2]/div/div/div/div/div/div[3]/div/div/section/div/section[1]/table/tbody/tr[1]")));
 

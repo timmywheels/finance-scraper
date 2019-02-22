@@ -40,8 +40,6 @@ public class Auth {
         try {
 //          2. ENTER USERNAME
             WebElement usernameInput = (WebElement) wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#login-username")));
-//            wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#login-username"))).sendKeys(username);
-
             System.out.println("usernameInput:" + usernameInput);
             usernameInput.sendKeys(username);
             System.out.println("Username entered...");
@@ -56,8 +54,6 @@ public class Auth {
         try {
 //          3. CLICK 'NEXT' BUTTON
             WebElement nextButton = (WebElement) wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#login-signin")));
-//            wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#login-signin"))).click();
-
             System.out.println("nextButton: " + nextButton);
             nextButton.click();
             System.out.println("'Next' button clicked...");
@@ -68,12 +64,9 @@ public class Auth {
             driver.quit();
         }
 
-
         try {
 //          4. ENTER PASSWORD
             WebElement passwordInput = (WebElement) wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#login-passwd")));
-//            wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#login-passwd"))).sendKeys(password);
-
             System.out.println("passwordInput: " + passwordInput);
             passwordInput.sendKeys(password);
             System.out.println("Password entered...");
@@ -85,12 +78,9 @@ public class Auth {
             driver.quit();
         }
 
-
         try {
 //          5. CLICK 'SIGN-IN' BUTTON
             WebElement signInButton = (WebElement) wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#login-signin")));
-//              wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#login-signin"))).click();
-
             System.out.println("signInButton: " + signInButton);
             signInButton.click();
             System.out.println("'Sign-in' button clicked...");
@@ -101,13 +91,11 @@ public class Auth {
             driver.quit();
         }
 
-
         try {
 //          7. SCRAPE TABLE
             Service.run(driver, wait);
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 }

@@ -25,17 +25,8 @@ export class AppComponent {
   data: any = [];
   displayedColumns = ['timeStamp', 'symbol', 'companyName', 'lastPrice', 'change', 'percentChange'];
   sortedData: any = [];
-  // dataSource = new MatTableDataSource(this.sortData(this.data));
 
   @ViewChild(MatSort) sort: MatSort;
-
-  // ngAfterViewInit() {
-  //   this.dataSource.sort = this.sort;
-  // }
-
-  // ngOnInit() {
-  //   this.sortData(this.data);
-  // }
 
   constructor(private http: HttpClient) {
     this.getData();
@@ -61,13 +52,11 @@ export class AppComponent {
         case 'symbol': return compare(a.symbol, b.symbol, isAsc);
         case 'companyName': return compare(a.companyName, b.companyName, isAsc);
         case 'lastPrice': return compare(a.lastPrice, b.lastPrice, isAsc);
-        // case 'change': return compare(a.change, b.change, isAsc);
-        // case 'percentChange': return compare(a.percentChange, b.percentChange, isAsc);
         default: return 0;
       }
     });
-    return this.sortedData;
     console.log("this.sortedData:", this.sortedData)
+    return this.sortedData;
   }
 
 
